@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://euwujed6t2ea"]
+
+[ext_resource type="Texture2D" uid="uid://c78m8rbxvptuf" path="res://assets/images/placeholders/player_idle_placeholder.png" id="1_1lp44"]
+[ext_resource type="Script" uid="uid://dc2q4iy0yj3pc" path="res://scripts/main_game/player/player_body.gd" id="1_58kma"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ifeun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1lp44")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1x3kl"]
+radius = 59.03389
+
+[node name="Player_body" type="Area2D" unique_id=1541458851]
+script = ExtResource("1_58kma")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289748491]
+sprite_frames = SubResource("SpriteFrames_ifeun")
+animation = &"idle"
+frame_progress = 0.9512245
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365868984]
+position = Vector2(4, 34)
+shape = SubResource("CircleShape2D_1x3kl")

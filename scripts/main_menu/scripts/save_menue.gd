@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scripts/main_menu/nodes/Main_menu.tscn")
+
+
+func _on_save_1_pressed() -> void:
+	get_tree().change_scene_to_file("res://scripts/main_game/places/Test_Room.tscn") # Tmczasowo wsła do test room
