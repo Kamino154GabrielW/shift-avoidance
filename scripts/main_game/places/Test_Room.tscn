@@ -1,7 +1,56 @@
 [gd_scene format=3 uid="uid://db7x2yq52lfdh"]
 
 [ext_resource type="PackedScene" uid="uid://euwujed6t2ea" path="res://scripts/main_game/player/player_body.tscn" id="1_n07ij"]
+[ext_resource type="Texture2D" uid="uid://cp4o71sa8hwmn" path="res://assets/images/placeholders/background placeholder.png" id="2_lg8xf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
+size = Vector2(39, 41)
 
 [node name="Node2D" type="Node2D" unique_id=2132281542]
+position = Vector2(28, 20)
+metadata/_edit_group_ = true
 
 [node name="Player_body" parent="." unique_id=1541458851 instance=ExtResource("1_n07ij")]
+position = Vector2(664, 355)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1653598203]
+light_mask = 2
+visibility_layer = 2
+z_index = 1
+position = Vector2(265.00003, 297.00003)
+scale = Vector2(10, 10)
+disable_mode = 1
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=1440782474]
+light_mask = 132
+visibility_layer = 4
+position = Vector2(-9.5, -10.5)
+shape = SubResource("RectangleShape2D_ifeun")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall" unique_id=974411696]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-9.000003, -10.500001)
+scale = Vector2(0.06269592, 0.07884616)
+texture = ExtResource("2_lg8xf")
+
+[node name="Pit" type="StaticBody2D" parent="." unique_id=1689130775]
+z_index = -1
+position = Vector2(1266, 678)
+scale = Vector2(10, 10)
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pit" unique_id=888957355]
+light_mask = 132
+visibility_layer = 4
+position = Vector2(-9.5, -10.5)
+shape = SubResource("RectangleShape2D_ifeun")
+
+[node name="Sprite2D" type="Sprite2D" parent="Pit" unique_id=215775083]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(-9.000003, -10.500001)
+scale = Vector2(0.06269592, 0.07884616)
+texture = ExtResource("2_lg8xf")

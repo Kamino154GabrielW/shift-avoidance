@@ -20,16 +20,26 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1x3kl"]
-radius = 59.03389
+radius = 29.0
 
-[node name="Player_body" type="Area2D" unique_id=1541458851]
+[node name="Player_body" type="CharacterBody2D" unique_id=952809422]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1, 1)
+disable_mode = 1
+collision_layer = 2
+collision_mask = 5
+motion_mode = 1
+platform_floor_layers = 4294967293
+platform_wall_layers = 4
 script = ExtResource("1_58kma")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289748491]
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_ifeun")
 animation = &"idle"
 frame_progress = 0.9512245
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1365868984]
-position = Vector2(4, 34)
+position = Vector2(-10, -1)
 shape = SubResource("CircleShape2D_1x3kl")
