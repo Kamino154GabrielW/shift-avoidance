@@ -16,14 +16,16 @@ func _process(delta: float) -> void:
 # Funkcja fizyczna – idealna dla CharacterBody2D i move_and_slide()
 func _physics_process(delta: float) -> void:
 	player_movement_func(delta) 
-	look_at(get_global_mouse_position())
-	
 	# Obsługuje ruch i kolizje ze ścianami
 	move_and_slide()
+	
+	look_at(get_global_mouse_position())#obrut postaci
+	
+	
 
 # Funkcja odpowiedzialna za obliczanie kierunku i prędkości
 func player_movement_func(delta: float) -> void:
-	var direction = Vector2.ZERO # Wektor kierunku (lokalny dla tej funkcji)
+	var direction = Vector2.ZERO 
 	
 	if Input.is_action_pressed("P_Move_Right"):
 		direction.x += 1
@@ -34,9 +36,9 @@ func player_movement_func(delta: float) -> void:
 	if Input.is_action_pressed("P_Move_UP"):
 		direction.y -= 1
 
-	# Jeśli gracz naciska jakiś klawisz ruchu
+	
 	if direction.length() > 0:
 		direction = direction.normalized()
-		velocity = direction * speed # Przypisujemy do wbudowanej zmiennej velocity
+		velocity = direction * speed 
 	else:
-		velocity = Vector2.ZERO # Zatrzymanie postaci, gdy nic nie jest wciśnięte
+		velocity = Vector2.ZERO 

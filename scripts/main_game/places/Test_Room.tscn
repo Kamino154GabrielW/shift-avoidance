@@ -38,7 +38,7 @@ texture = ExtResource("2_lg8xf")
 
 [node name="Pit" type="StaticBody2D" parent="." unique_id=1689130775]
 z_index = -1
-position = Vector2(1266, 678)
+position = Vector2(1261, 678)
 scale = Vector2(10, 10)
 disable_mode = 1
 
