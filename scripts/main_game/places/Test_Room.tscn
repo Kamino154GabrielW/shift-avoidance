@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://euwujed6t2ea" path="res://scripts/main_game/player/player_body.tscn" id="1_n07ij"]
 [ext_resource type="Texture2D" uid="uid://cp4o71sa8hwmn" path="res://assets/images/placeholders/background placeholder.png" id="2_lg8xf"]
+[ext_resource type="PackedScene" uid="uid://du1aeqarfko0u" path="res://scripts/pouse_menu/pause_menu.tscn" id="3_a63us"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifeun"]
 size = Vector2(39, 41)
@@ -54,3 +55,7 @@ visibility_layer = 4
 position = Vector2(-9.000003, -10.500001)
 scale = Vector2(0.06269592, 0.07884616)
 texture = ExtResource("2_lg8xf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1140271947]
+
+[node name="pause_menu" parent="CanvasLayer" unique_id=1624532767 instance=ExtResource("3_a63us")]

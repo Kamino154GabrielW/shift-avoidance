@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://du1aeqarfko0u"]
+
+[ext_resource type="Script" uid="uid://cs1holdlpmm42" path="res://scripts/pouse_menu/pause_menu.gd" id="1_i0ffa"]
+[ext_resource type="FontFile" uid="uid://bymhcqptkjva" path="res://assets/fonts/Times New Normal Regular.ttf" id="2_4s4ie"]
+[ext_resource type="FontFile" uid="uid://bn3di4yjkb81s" path="res://assets/fonts/PLANK___.ttf" id="3_qybn5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0bdjm"]
+bg_color = Color(0.10333168, 0.19763151, 0.24255133, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0753089, 4.813075e-08, 0.5710142, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.23529412)
+shadow_size = 10
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujrn3"]
+bg_color = Color(0.10627838, 0.123303555, 0.26996845, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(9.62615e-07, 0.3691923, 0.4739101, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="pause_menu" type="Control" unique_id=1624532767]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i0ffa")
+
+[node name="Panel" type="Panel" parent="." unique_id=1414387811]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -347.0
+offset_top = 78.0
+offset_right = 349.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1122748434]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -341.0
+offset_top = -203.0
+offset_right = 351.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Play_button" type="Button" parent="VBoxContainer" unique_id=706791030]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4s4ie")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bdjm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujrn3")
+text = "Resume"
+
+[node name="Play_button4" type="Button" parent="VBoxContainer" unique_id=1173402794]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4s4ie")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bdjm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujrn3")
+text = "Options"
+
+[node name="Play_button2" type="Button" parent="VBoxContainer" unique_id=2062068756]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4s4ie")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bdjm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujrn3")
+text = "Back to menue"
+
+[node name="Play_button3" type="Button" parent="VBoxContainer" unique_id=643705544]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4s4ie")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0bdjm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujrn3")
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=1951305923]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -318.0
+offset_right = 350.0
+offset_bottom = -232.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_qybn5")
+theme_override_font_sizes/font_size = 60
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play_button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play_button2" to="." method="_on_play_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play_button3" to="." method="_on_play_button_3_pressed"]
